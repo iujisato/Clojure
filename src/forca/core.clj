@@ -17,24 +17,19 @@
     (.contains word guess)
 )
 
-(defn guess! [] (read-line))
-
 (defn game [remaining-chances word right-guesses]
-  (defn guess-a-letter [remaining-chances, word, guess, right-guesses]
+  (cond
+    (= remaining-chances 0) (you-lost)
+    (right-word? word right-guesses) (you-win)
+    :else
+    (let [guess (read-line)]
       (if (contains-letter? word guess)
-          (game remaining-chances word (conj right-guesses guess))
-          (game (dec remaining-chances) word right-guesses)
-      )
-  )
-
-  (if (= remaining-chances 0)
-      (you-lost)
-      (if (right-word? word right-guesses)
-          (you-win)
-          (guess-a-letter remaining-chances word (guess!) right-guesses)
-      )
-  )
-)
+        (do
+            (println "Whaaaat?! In da hole man!")
+            (recur remaining-chances word (conj right-guesses guess)))
+        (do
+            (println "Good one! You failed miserably rofl")
+            (recur (dec remaining-chances) word right-guesses))))) )
 
 (defn -main
   "I don't do a whole lot ... yet."
