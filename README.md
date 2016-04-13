@@ -1,6 +1,12 @@
 # Hangman Clojure
 First steps on functional programming with Clojure, developing a simple hangman game.
 
+<details>
+<summary>Its pretty easy to guess the secret word, but if you dont want to have some fun click here</summary>
+clojure
+</details>
+
+
 ## Requirements
 * [Leiningen 2.6.1] (http://leiningen.org/#install)
 * Clojure 1.8.0
