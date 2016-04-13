@@ -3,8 +3,8 @@
 
 (def total-chances 6)
 
-(defn you-lost [] (print "Awww...most there! You lost bro! =("))
-(defn you-win [] (print "Really? Gratz bro!!!"))
+(defn you-lost [] (println "Awww...most there! You lost bro! =("))
+(defn you-win [] (println "Really? Gratz bro!!!"))
 
 (defn remaining-letters [word right-guesses]
     (remove (fn [chosen-letter] (contains? right-guesses (str chosen-letter))) word)
@@ -17,7 +17,19 @@
     (.contains word guess)
 )
 
+(defn feedback-interface [remaining-chances word right-guesses]
+  (println "Remaining chances:" remaining-chances)
+  (doseq [character (seq word)]
+    (if (contains? right-guesses (str character))
+      (print character " ")
+      (print "_" " ")
+    )
+  )
+  (println)
+)
+
 (defn game [remaining-chances word right-guesses]
+  (feedback-interface remaining-chances word right-guesses)
   (cond
     (= remaining-chances 0) (you-lost)
     (right-word? word right-guesses) (you-win)
