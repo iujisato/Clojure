@@ -2,7 +2,7 @@
 First steps on functional programming with Clojure, developing a simple hangman game.
 
 <details>
-<summary>Its pretty easy to guess the secret word, but if you dont want to have some fun click here</summary>
+<summary>Its pretty easy to guess the secret word, but if you dont want to have some fun click on the left arrow</summary>
 The secret word for the clojure's hangman is `clojure`
 </details>
 
