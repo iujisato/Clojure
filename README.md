@@ -3,7 +3,7 @@ First steps on functional programming with Clojure, developing a simple hangman 
 
 <details>
 <summary>Its pretty easy to guess the secret word, but if you dont want to have some fun click here</summary>
-clojure
+The secret word for the clojure's hangman is `clojure`
 </details>
 
 
